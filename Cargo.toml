@@ -13,8 +13,7 @@ crate-type = ["cdylib"]
 # Python package metadata
 [package.metadata.maturin]
 name = "rustypdf"
-python-source = "rustypdf"
-include = ["LICENSE", "README.md", "Cargo.toml", "pyproject.toml"]
+python-module = "rustypdf"
 
 [dependencies]
 pyo3 = { version = "0.21", features = ["extension-module"] }
