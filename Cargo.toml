@@ -7,6 +7,11 @@ edition = "2021"
 name = "_rustypdf"
 crate-type = ["cdylib"]
 
+# Python package metadata
+[package.metadata.maturin]
+name = "rustypdf"
+python-source = "rustypdf"
+
 [dependencies]
 pyo3 = { version = "0.21", features = ["extension-module"] }
 lopdf = "0.32" # merging & object editing
