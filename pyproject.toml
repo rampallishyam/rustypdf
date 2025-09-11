@@ -8,7 +8,6 @@ version = "0.1.0"
 description = "CLI tool to compress and merge PDFs (Rust backend via PyO3)"
 authors = [ { name = "Shyam Sundar", email = "rampallishyam2@gmail.com" } ]
 readme = "README.md"
-license = "MIT"
 requires-python = ">=3.8"
 dependencies = [
     "pypdf>=4,<5",
@@ -29,7 +28,8 @@ rustypdf = "rustypdf.__main__:main"
 [tool.maturin]
 module-name = "_rustypdf"
 python-packages = ["rustypdf"]
-include = ["LICENSE", "README.md"]
+include = ["LICENSE", "README.md", "MANIFEST.in"]
+sdist-include = ["LICENSE", "README.md", "MANIFEST.in"]
 
 [project.urls]
 Homepage = "https://example.com"

@@ -27,6 +27,7 @@ jobs:
           python-version: '3.12'
       - uses: PyO3/maturin-action@v1
         with:
+          maturin-version: "1.5.1"
           command: build --release --out dist --interpreter python3.12 --manifest-path ./Cargo.toml
       - uses: actions/upload-artifact@v4
         with:

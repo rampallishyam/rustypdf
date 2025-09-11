@@ -2,6 +2,9 @@
 name = "rustypdf"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
+description = "CLI tool to compress and merge PDFs (Rust backend via PyO3)"
+authors = ["Shyam Sundar <rampallishyam2@gmail.com>"]
 
 [lib]
 name = "_rustypdf"
@@ -11,6 +14,7 @@ crate-type = ["cdylib"]
 [package.metadata.maturin]
 name = "rustypdf"
 python-source = "rustypdf"
+include = ["LICENSE", "README.md", "Cargo.toml", "pyproject.toml"]
 
 [dependencies]
 pyo3 = { version = "0.21", features = ["extension-module"] }
