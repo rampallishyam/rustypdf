@@ -43,6 +43,6 @@ jobs:
           path: dist
           merge-multiple: true
       - name: Publish to PyPI
-        uses: pypa/gh-action-pypi-publish@v1.8.11
+        uses: pypa/gh-action-pypi-publish@v1.8.2
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
