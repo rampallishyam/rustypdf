@@ -30,7 +30,7 @@ rustypdf = "rustypdf.__main__:main"
 
 [tool.maturin]
 module-name = "_rustypdf"
-python-source = "rustypdf"
+python-packages = ["rustypdf"]
 include = ["LICENSE", "README.md", "MANIFEST.in"]
 sdist-include = ["LICENSE", "README.md", "MANIFEST.in"]
 strip = true

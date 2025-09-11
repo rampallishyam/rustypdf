@@ -28,7 +28,7 @@ jobs:
       - uses: PyO3/maturin-action@v1
         with:
           maturin-version: "1.5.1"
-          command: build --release --out dist --interpreter python3.12
+          command: build --release --out dist --interpreter python3.12 --compatibility manylinux2014
       - uses: actions/upload-artifact@v4
         with:
           name: wheels-${{ matrix.os }}
@@ -45,8 +45,10 @@ jobs:
           pattern: wheels-*
           path: dist
           merge-multiple: true
-      - name: Install twine
-        run: pip install twine
+      - name: Install twine and wheel
+        run: pip install twine wheel
+      - name: Setup Python environment
+        run: pip install build
       - name: Check wheel metadata
         run: |
           echo "Listing files in dist directory:"
