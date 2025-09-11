@@ -48,8 +48,15 @@ jobs:
         run: pip install twine
       - name: Check wheel metadata
         run: |
-          python -m twine check dist/*.whl
+          echo "Listing files in dist directory:"
           ls -la dist/
+          echo "Checking wheel metadata with twine:"
+          python -m twine check dist/*.whl
+          echo "Examining wheel content:"
+          for wheel in dist/*.whl; do
+            echo "Contents of $wheel:"
+            python -m zipfile -l $wheel | grep -i meta
+          done
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@v1.8.2
         with:
