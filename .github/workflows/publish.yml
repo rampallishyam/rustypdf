@@ -25,12 +25,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install Maturin
-        run: pip install maturin==1.5.1
-      - name: Build wheels
-        run: |
-          maturin build --release --out dist
-          ls -la dist/
+      - uses: PyO3/maturin-action@v1
+        with:
+          maturin-version: "1.5.1"
+          command: build --release --out dist --interpreter python3.12
       - uses: actions/upload-artifact@v4
         with:
           name: wheels-${{ matrix.os }}
