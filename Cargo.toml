@@ -10,11 +10,6 @@ authors = ["Shyam Sundar <rampallishyam2@gmail.com>"]
 name = "_rustypdf"
 crate-type = ["cdylib"]
 
-# Python package metadata
-[package.metadata.maturin]
-name = "rustypdf"
-python-module = "rustypdf"
-
 [dependencies]
 pyo3 = { version = "0.21", features = ["extension-module"] }
 lopdf = "0.32" # merging & object editing
