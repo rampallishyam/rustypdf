@@ -1,0 +1,35 @@
+[build-system]
+requires = ["maturin>=1.5,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "rustypdf"
+version = "0.1.0"
+description = "CLI tool to compress and merge PDFs (Rust backend via PyO3)"
+authors = [ { name = "Example Author", email = "author@example.com" } ]
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.8"
+dependencies = [
+    "pypdf>=4,<5",
+]
+classifiers = [
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Rust",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+keywords = ["pdf", "compression", "merge", "cli", "rust", "pyo3", "rustypdf"]
+
+[project.scripts]
+rustypdf = "rustypdf.__main__:main"
+
+
+[tool.maturin]
+module-name = "_rustypdf"
+python-packages = ["rustypdf"]
+
+[project.urls]
+Homepage = "https://example.com"
+Repository = "https://example.com/repo"
