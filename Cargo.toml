@@ -1,0 +1,14 @@
+[package]
+name = "rustypdf"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "_rustypdf"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.21", features = ["extension-module"] }
+lopdf = "0.32" # merging & object editing
+image = { version = "0.25", default-features = false, features = ["jpeg", "png"] }
+thiserror = "1"

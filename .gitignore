@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+dist/
+build/
+*.log
+.mypy_cache/
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+.env
+pip-wheel-metadata/
+
+# Byte-compiled / shared objects
+*.so
+*.dylib
+
+# Rust / Cargo
+/target/
+# Keep Cargo.lock tracked by default; comment out to ignore it for libraries
+# Cargo.lock
+
+# maturin/wheels
+*.whl
+/target/wheels/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editors/IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# Misc
+*.swp
+*.swo
