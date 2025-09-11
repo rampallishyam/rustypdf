@@ -1,0 +1,27 @@
+[build-system]
+requires = ["maturin>=1.9,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "pdf_manipulator"
+requires-python = ">=3.8"
+description = "A Python CLI tool backed by Rust for PDF compression and merging"
+authors = [{name = "PDF Manipulator", email = "pdf@example.com"}]
+license = {text = "MIT"}
+keywords = ["pdf", "compression", "merge", "cli", "rust"]
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Topic :: Multimedia :: Graphics",
+    "Topic :: Office/Business",
+]
+dynamic = ["version"]
+
+[project.scripts]
+pdf-manipulator = "pdf_manipulator.cli:main"
+[tool.maturin]
+features = ["pyo3/extension-module"]
