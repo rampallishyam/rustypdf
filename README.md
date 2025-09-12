@@ -5,10 +5,65 @@ CLI tool to compress and merge PDF files using a Rust backend exposed to Python 
 - `compress`: Reduce embedded image dimensions (PNG) with a scale factor (1-10). Placeholder JPEG handling.
 - `merge`: Concatenate multiple PDFs preserving page order.
 
-## Installation (local build)
+
+
+## Installation
+
+### Recommended: Install from PyPI (all platforms)
+```bash
+pip install rustypdf
+```
+
+If you see a message like "not a supported wheel on this platform" or if a prebuilt wheel is not available for your system, follow the platform-specific instructions below to build from source.
+
+---
+
+### macOS (Apple Silicon & Intel)
+If `pip install rustypdf` fails:
+
+```bash
+# Install maturin if not already installed
+pip install maturin
+
+# Clone the repository
+git clone https://github.com/rampallishyam/rustypdf.git
+cd rustypdf
+
+# Build and install (works for both Intel and Apple Silicon)
+maturin develop
+```
+
+---
+
+### Linux
+If `pip install rustypdf` fails:
+
 ```bash
 pip install maturin
-maturin develop  # or: maturin build --release && pip install target/wheels/rustypdf-*.whl
+git clone https://github.com/rampallishyam/rustypdf.git
+cd rustypdf
+maturin develop
+```
+
+---
+
+### Windows
+If `pip install rustypdf` fails:
+
+```powershell
+pip install maturin
+git clone https://github.com/rampallishyam/rustypdf.git
+cd rustypdf
+maturin develop
+```
+
+---
+
+Alternatively, for any platform, you can build a wheel and install it manually:
+```bash
+pip install maturin
+maturin build --release
+pip install target/wheels/rustypdf-*.whl
 ```
 
 ## CLI Usage
