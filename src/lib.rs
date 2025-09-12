@@ -8,7 +8,7 @@ use image::GenericImageView;
 use thiserror::Error;
 
 #[derive(Error, Debug)]
-enum PdfManError {
+enum RustyPdfError {
     #[error("IO error: {0}")] 
     Io(#[from] std::io::Error),
     #[error("PDF parse error: {0}")]
@@ -17,14 +17,14 @@ enum PdfManError {
     BadScale(i32),
 }
 
-impl From<PdfManError> for PyErr {
-    fn from(e: PdfManError) -> Self {
+impl From<RustyPdfError> for PyErr {
+    fn from(e: RustyPdfError) -> Self {
         PyValueError::new_err(e.to_string())
     }
 }
 
 /// Merge multiple PDFs preserving page order.
-fn merge_impl(inputs: &[&str], output: &str) -> Result<(), PdfManError> {
+fn merge_impl(inputs: &[&str], output: &str) -> Result<(), RustyPdfError> {
     let mut target_doc = Document::with_version("1.5");
     let mut max_id = 1u32;
 
@@ -114,8 +114,8 @@ fn merge_impl(inputs: &[&str], output: &str) -> Result<(), PdfManError> {
 
 /// Very naive compression: downscale JPEG/PNG images by a factor derived from scale (1..10) and re-embed.
 /// This is a placeholder; full fidelity PDF image handling is complex.
-fn compress_impl(input: &str, output: &str, scale: i32) -> Result<(), PdfManError> {
-    if !(1..=10).contains(&scale) { return Err(PdfManError::BadScale(scale)); }
+fn compress_impl(input: &str, output: &str, scale: i32) -> Result<(), RustyPdfError> {
+    if !(1..=10).contains(&scale) { return Err(RustyPdfError::BadScale(scale)); }
 
     let mut doc = Document::load(input)?;
 

@@ -1,5 +1,3 @@
-# PDF Manipulator (pdfman)
-
 # RustyPDF (rustypdf)
 CLI tool to compress and merge PDF files using a Rust backend exposed to Python via PyO3/maturin.
 
@@ -10,17 +8,15 @@ CLI tool to compress and merge PDF files using a Rust backend exposed to Python 
 ## Installation (local build)
 ```bash
 pip install maturin
-maturin develop  # or: maturin build --release && pip install target/wheels/pdfman-*.whl
+maturin develop  # or: maturin build --release && pip install target/wheels/rustypdf-*.whl
 ```
 
 ## CLI Usage
 ```bash
 rustypdf --help
 
-pdfman compress --input input.pdf --output out.pdf --scale 7
 rustypdf compress --input input.pdf --output out.pdf --scale 7
 
-pdfman merge --inputs a.pdf b.pdf c.pdf --output merged.pdf
 rustypdf merge --inputs a.pdf b.pdf c.pdf --output merged.pdf
 ```
 
