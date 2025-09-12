@@ -61,9 +61,8 @@ jobs:
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@v1.8.2
         with:
-          packages-dir: dist/
+          packages-dir: target/
           skip-existing: false
           verbose: true
           print-hash: true
-          only-wheels: true
           password: ${{ secrets.PYPI_API_TOKEN }}
