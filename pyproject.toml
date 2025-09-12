@@ -4,7 +4,7 @@ build-backend = "maturin"
 
 [project]
 name = "rustypdf"
-version = "0.1.0"
+version = "0.1.1"
 description = "CLI tool to compress and merge PDFs (Rust backend via PyO3)"
 authors = [
     {name = "Shyam Sundar", email = "rampallishyam2@gmail.com"}

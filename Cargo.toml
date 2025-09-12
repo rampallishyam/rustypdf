@@ -1,6 +1,6 @@
 [package]
 name = "rustypdf"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 license = "MIT"
 description = "CLI tool to compress and merge PDFs (Rust backend via PyO3)"
