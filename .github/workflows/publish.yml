@@ -65,4 +65,5 @@ jobs:
           skip-existing: false
           verbose: true
           print-hash: true
+          only-wheels: true
           password: ${{ secrets.PYPI_API_TOKEN }}
