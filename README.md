@@ -1,5 +1,25 @@
+
 # RustyPDF (rustypdf)
 CLI tool to compress and merge PDF files using a Rust backend exposed to Python via PyO3/maturin.
+
+## Project Structure
+
+```
+rustypdf/                 # Project root directory
+├── Cargo.lock            # Cargo lock file for Rust dependencies
+├── Cargo.toml            # Rust project manifest (dependencies, metadata)
+├── LICENSE               # Project license (MIT)
+├── MANIFEST.in           # Python packaging manifest (includes/excludes files)
+├── pyproject.toml        # Python build system and dependencies (PEP 517)
+├── README.md             # Project documentation (this file)
+├── setup.py              # Python setuptools build script
+├── rustypdf/             # Python package source directory
+│   ├── __init__.py       # Package initializer, exposes Python API
+│   ├── __main__.py       # Entry point for CLI (python -m rustypdf)
+│   └── _rust.py          # Python bindings to Rust code (via PyO3/maturin)
+├── src/                  # Rust source code directory
+│   └── lib.rs            # Main Rust library (core PDF logic)
+```
 
 ## Features
 - `compress`: Reduce embedded image dimensions (PNG) with a scale factor (1-10). Placeholder JPEG handling.
